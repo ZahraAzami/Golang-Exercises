@@ -1,6 +1,9 @@
 package main
 
-import "math"
+import (
+	"fmt"
+	"math"
+)
 
 type InValue int
 
@@ -27,4 +30,8 @@ func SumOfSquares(n int) int {
 }
 func Difference(n int) int {
 	return SquareOfSum(n) - SumOfSquares(n)
+}
+func main() {
+	i := InValue(15)
+	fmt.Println("this is bigger:", i.Bigger(5))
 }

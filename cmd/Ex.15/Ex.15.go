@@ -36,3 +36,21 @@ type PowerDrawer interface {
 func (socket) plung(divace PowerDrawer, power int) {
 	divace.Draw(power)
 }
+func main() {
+	m := mobile{
+		"iOS",
+	}
+	l := Laptop{
+		"Intel i9",
+	}
+	t := toaster{4}
+	k := kettle{"50%"}
+
+	m.Draw(5)
+	s := socket{}
+	m.brand = "Appel"
+	s.plung(m, 10)
+	s.plung(l, 15)
+	s.plung(t, 50)
+	s.plung(k, 48)
+}

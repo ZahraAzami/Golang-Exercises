@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"fmt"
 	"strconv"
 )
 
@@ -68,4 +69,21 @@ func (b BitVector) String() string {
 	}
 	buff.WriteString("}")
 	return buff.String()
+}
+func main() {
+	dr := NewBitvector(18)
+	dr.Add(12)
+	dr.Add(10)
+	dr.Add(14)
+	dr.Add(9)
+	fmt.Println("add;", dr.data)
+	fmt.Println("Contains;", dr.Contains(11))
+	fmt.Println("Remove ;", dr.Remove(10))
+	fmt.Println("add;", dr.data)
+	dr.Add(8)
+	fmt.Println("add;", dr.data)
+	fmt.Println("Remove ;", dr.Remove(8))
+	fmt.Println("add;", dr.data)
+	fmt.Println("St:", dr.String())
+
 }

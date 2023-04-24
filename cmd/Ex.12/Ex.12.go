@@ -37,3 +37,13 @@ func (Cw *CounterWriter) Write(p []byte) (num int, err error) {
 	Cw.Count = Cw.Count + int64(num)
 	return num, err
 }
+func main() {
+
+	cw := CustomWriter{}
+	CWriter := NewCounterWrit(&cw)
+	fmt.Fprintf(&CWriter, "Hear is : %s\n", "zaniar")
+	fmt.Fprintf(&CWriter, "Hear is : %s\n", "mohamad")
+	fmt.Fprintf(&CWriter, "Hear is : %d\n", CWriter.Count)
+	var WC WordCounter
+	fmt.Fprintf(&WC, "This is class room in class for Go learning")
+}

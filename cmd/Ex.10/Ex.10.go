@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"fmt"
 	"strconv"
 )
 
@@ -76,4 +77,31 @@ func (in *IntSet) Add2(value ...int) {
 	for _, v := range value {
 		in.data[v] = true
 	}
+}
+func main() {
+
+	data1 := IntSet{
+		data: map[int]bool{
+			1: true,
+			2: true,
+			6: true,
+			8: true,
+			9: true,
+			7: true,
+		},
+	}
+	data2 := IntSet{
+		data: map[int]bool{
+			1: true,
+			3: true,
+			5: true,
+			7: true,
+		},
+	}
+	fmt.Println("union:", Union(data1, data2))
+	fmt.Println("d1", data1)
+	fmt.Println("InterSet:", Intersect(data1, data2))
+	fmt.Println("St:", data1.String())
+	data1.Add(2)
+	fmt.Println("add:", data1)
 }
